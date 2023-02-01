@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerLinks}}
+</head>
+
+<body>
+    {{>navbar}}
+
+    <!-- Main header -->
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="row">
+                    <div class="col-md-6 col-12 main_header_right align-items-center">
+                        <figure>
+                            <img src="images/about.png" style="height: 400px; width: 600px;" alt="Ayush Khatri">
+                        </figure>
+                    </div>
+                    <div class="col-md-6 col-12 main_header_left">
+                        <p>Welcome To About Me Page.</p>
+                        <h1>I am an <span class="text_clr">Node JS Developer</span> And Also <span class="text_clr">PHP
+                                Developer</span>.</h1>
+                        <p>
+                            I Used This website for API:- <a href="https://openweathermap.org/current#builtin" target="_blank">Open Weather</a>.
+                            <br>I Used This Site for API Key:- <a href="https://home.openweathermap.org/api_keys" target="_blank">API Key</a>
+                        </p>
+                        <a href="/about">
+                            <button>About Me</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Part -->
+    {{>footer}}
+
+</body>
+
+</html>
