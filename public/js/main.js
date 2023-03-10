@@ -15,12 +15,10 @@ const getInfo = async (event) => {
     } else {
         try {
             datahide.classList.remove("data_hide");
-            // let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&APPID=d12de75db6a2c0ce4cd7b4e0108fdee8`;
             let url = `https://api.weatherapi.com/v1/current.json?key=2dffac0fae0a4fbdb34121146230903&q=${cityVal}&aqi=no`;
             const response = await fetch(url);
             const data = await response.json();
             const arrData = [data];
-            console.log(arrData)
 
             city_name.innerHTML = `${arrData[0].location.name}, ${arrData[0].location.country}`;
             temp_real_val.innerText = arrData[0].current.temp_c;
