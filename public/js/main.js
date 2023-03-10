@@ -20,6 +20,7 @@ const getInfo = async (event) => {
             const response = await fetch(url);
             const data = await response.json();
             const arrData = [data];
+            console.log(arrData)
 
             city_name.innerHTML = `${arrData[0].location.name}, ${arrData[0].location.country}`;
             temp_real_val.innerText = arrData[0].current.temp_c;
@@ -28,9 +29,9 @@ const getInfo = async (event) => {
             //  Condition to check weather
             if (tempMood == "Sunny") {
                 temp_status.innerHTML = "<i class='fa fa-sun fa-spin' style='color: #eccc68;' title='Clear'></i>";
-            } else if (tempMood == "Partly cloudy" || tempMood == "Moderate or heavy rain with thunder" || tempMood == "Light rain") {
-                temp_status.innerHTML = "<i class='fa fa-cloud fa-beat-fade' style='color: #f1f2f6;' title='Clouds'></i>";
-            } else if (tempMood == "Light sleet" || tempMood == "Fog") {
+            } else if (tempMood == "Patchy light snow" || tempMood == "Light snow" || tempMood == "Partly cloudy") {
+                temp_status.innerHTML = "<i class='fa fa-cloud' title='Clouds'></i>";
+            } else if (tempMood == "Light rain" || tempMood == "Overcast" || tempMood == "Light sleet" || tempMood == "Fog" || tempMood == "Moderate or heavy rain with thunder") {
                 temp_status.innerHTML = "<i class='fa fa-cloud-rain fa-beat-fade' style='color: #a4b0be;' title='Rainy'></i>";
             } else {
                 temp_status.innerHTML = "<i class='fa fa-sun fa-spin' style='color: #eccc68;'></i>";
